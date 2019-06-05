@@ -1,14 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Library</title>
-</head>
-<body>
+{% extends 'main_page/wrapper.html' %}
+
+{% block content %}
 <form method="POST">{% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">Add</button>
+    <button class="btn btn-outline-dark my-2 my-sm-0 text_white" type="submit">Add</button>
 </form>
-<h5><a href = '../'>Back</a></h5>
-</body>
-</html>
+{% endblock %}
