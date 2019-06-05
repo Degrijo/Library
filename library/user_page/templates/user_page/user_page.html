@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Library</title>
+</head>
+<body>
+<h1>Current books</h1>
+{% for book in Book %}
+<h3><a href="{{book.id}}/">book.title</a></h3>
+<h4>author - {{book.author}}</h4>
+<h4>start reading - {{book.read_start_date}}</h4>
+<hr>
+{% endfor %}
+<h1>Add new book</h1>
+<form method="POST">{% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Add</button>
+</form>
+<h5><a href = '../'>Back</a></h5>
+</body>
+</html>
